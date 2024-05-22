@@ -1,0 +1,127 @@
+% Exercise Template
+%A LaTeX template for typesetting exercise in Persian (with cover page).
+%By: Zeinab Seifoori
+
+\documentclass[12pt]{exam}
+
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{graphicx,subfigure,wrapfig}
+\usepackage{multirow}
+%\usepackage{multicol}
+
+\usepackage[margin=20mm]{geometry}
+\usepackage{xepersian}
+\usepackage{fontspec}
+\settextfont[ExternalLocation]{XB Niloofar.ttf}
+   
+\newcommand{\class}{درس طراحی پایگاه داده‌ها}
+\newcommand{\term}{نیم‌سال دوم ۰۱-۰۲}
+\newcommand{\college}{دانشکده مهندسی کامپیوتر}
+\newcommand{\prof}{استاد: دکتر اسدی}
+
+\singlespacing 
+\parindent 0ex
+
+\lstset{
+keywordstyle=\textbf,
+identifierstyle=, 
+stringstyle=\ttfamily,
+commentstyle=\color{LimeGreen}, 
+stringstyle=\ttfamily,
+numberstyle=\footnotesize,
+showstringspaces=false} 
+\begin{document}
+
+\include{info}
+\pagestyle{empty}
+\include{cover-page}
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{صفحه \thepage\ از \numpages}{}{\class}
+\runningheadrule
+%\begin{tabular}{p{.7\textwidth} l}
+%\multicolumn{2}{c}{\textbf{به نام خدا}}\\
+%\multirow{2}{*}{\includegraphics[scale=0.2] {images/logo.png}} & \\ \\
+%&  \textbf{\class}\\
+%&  \textbf{\term}\\
+%&  \textbf{\prof}\\ \\
+% \textbf{\college} &  \\
+%\end{tabular}\\
+
+%\rule[1ex]{\textwidth}{.1pt}
+%\textbf{تمرین سری پنجم}
+
+%\rule[1ex]{\textwidth}{.1pt}
+%\makebox[45mm]{\hrulefill}\\
+\vspace{0pt}
+
+• پرسش‌های خود را می‌توانید در  تالار ایجاد شده در سایت درس مطرح کنید.\\
+•  نوشتن نام خود را فراموش نفرمایید.\\
+
+\centering
+\vspace{0pt}
+\gradetablestretch{2}
+\vqword{پرسش} \hqword{پرسش}
+\vpword{بارم} \hpword{بارم}
+\vsword{نمره} \hsword{نمره}
+\vtword{جمع نمرات} \htword{جمع نمرات}
+    \addpoints % required here by exam.cls, even though questions haven't started yet.  
+{\small
+    \gradetable[h]%[pages]  % Use [pages] to have grading table by page instead of question
+}
+
+%\baselineskip = 9mm
+
+\begin{questions}
+\pointpoints{نمره}{نمره}
+
+
+\question[10]
+کار برنامه زیر چیست؟ 
+\begin{latin}
+\begin{lstlisting}[language=C,breaklines=true]
+int main()
+{
+    char s[80];
+    int i;
+    gets(s);
+    for(i=0; s[i] != '\0'; i++)
+    {
+       if(s[i] == 'a') 
+         continue;
+       putchar(s[i]);
+    }
+}
+\end{lstlisting}
+\end{latin}
+
+
+\question 
+تابعی به نام 
+\lr{max}
+بنویسید که دو عدد صحیح را به عنوان آرگومان ورودی گرفته ماکزیمم آنها را برگرداند.
+\begin{parts}
+\part[10] با دو \lr{return}
+\part[10] با یک \lr{return}
+\end{parts}
+
+\question[20]
+تابعی بازگشتی بنویسید که عددی را به عنوان آرگومان گرفته (مثلاً $x$) سه به توان آنرا ($3^x$) محاسبه و برگرداند. اگر بازگشتی ننویسید، بخشی از نمره را از دست خواهید داد.
+
+\question[20]
+تابعی بنویسید که دو عدد صحیح را به عنوان آرگومان پذیرفته، حاصل ت
+سیم اولی بر دومی را محاسبه و برگرداند. اگر عدد دوم صفر است پیام مناسبی چاپ کنید. اگر تابع ننویسید بخشی از نمره را از دست خواهید داد.
+
+\question[30]
+فرمول بسط سینوس به صورت زیر است:
+
+\[ sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} +  \cdots \]
+
+برنامه‌ای برای محاسبه  مجموع ۲۰ جمله اول آن بنویسید.
+در صورت تمایل می‌توانید تابعی برای محاسبه فاکتوریل بنویسید.
+
+\end{questions}
+\end{document}
