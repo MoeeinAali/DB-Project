@@ -8,6 +8,7 @@
 \usepackage{listings}
 \usepackage{graphicx,subfigure,wrapfig}
 \usepackage{multirow}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
 %\usepackage{multicol}
 
 \usepackage[margin=20mm]{geometry}
@@ -42,86 +43,153 @@ showstringspaces=false}
 \firstpageheader{}{}{}
 \runningheader{صفحه \thepage\ از \numpages}{}{\class}
 \runningheadrule
-%\begin{tabular}{p{.7\textwidth} l}
-%\multicolumn{2}{c}{\textbf{به نام خدا}}\\
-%\multirow{2}{*}{\includegraphics[scale=0.2] {images/logo.png}} & \\ \\
-%&  \textbf{\class}\\
-%&  \textbf{\term}\\
-%&  \textbf{\prof}\\ \\
-% \textbf{\college} &  \\
-%\end{tabular}\\
+\pagebreak
 
-%\rule[1ex]{\textwidth}{.1pt}
-%\textbf{تمرین سری پنجم}
+\subsection*{\underline{تقسیم‌بندی پروژه}}
+\subsubsection*{تسک‌های مربوط به عضو اول: \href{https://github.com/MelikaAlizadeh}{ملیکا علیزاده}}
+\begin{enumerate}
+	
+	
+	\item شناسایی موجودیت ها (Entities) از پروژه
+	
+	\item شناسایی صفات (Attributes) از پروژه
+	
+	\item طراحی موجودیت ها و صفات در Draw.io
+	
+	\item طراحی روابط در Draw.io
+	
+	\item نوشتن توضیحات برای ERD
+	
+\end{enumerate}
+\subsubsection*{تسک‌های مربوط به عضو دوم: \href{https://github.com/saminakbari}{ثمین اکبری} }
+\begin{enumerate}
+	
+	\item شناسایی موجودیت ها (Entities) از پروژه
+	
+	\item شناسایی صفات (Attributes) از پروژه
+	
+	\item طراحی موجودیت ها و صفات در Draw.io
+	
+	\item طراحی روابط در Draw.io
+	
+	\item نوشتن جبر رابطه‌ای
+	
+	
+\end{enumerate}
+\subsubsection*{تسک‌های مربوط به عضو سوم: \href{https://github.com/MoeeinAali}{معین آعلی}}
+\begin{enumerate}
+	
+	\item ایجاد مخزن گیت هاب و تعریف مساله
+	
+	\item طراحی موجودیت ها و صفات در Draw.io
+	
+	\item آماده سازی لاتک (LaTeX) برای پاسخ های پروژه
+	
+	\item نوشتن جبر رابطه‌ای
+	
+	\item نوشتن جبر رابطه‌ای با LaTeX
+	
+	
+\end{enumerate}
 
-%\rule[1ex]{\textwidth}{.1pt}
-%\makebox[45mm]{\hrulefill}\\
-\vspace{0pt}
+جزئیات تقسیم‌بندی کارها داخل این 
+\href{https://github.com/MoeeinAali/DB-Project/issues/1}{Issue Github}
+موجود است.
 
-• پرسش‌های خود را می‌توانید در  تالار ایجاد شده در سایت درس مطرح کنید.\\
-•  نوشتن نام خود را فراموش نفرمایید.\\
+\pagebreak
+\subsection*{\underline{نمودار رابطه-موجودیت}}
 
-\centering
-\vspace{0pt}
-\gradetablestretch{2}
-\vqword{پرسش} \hqword{پرسش}
-\vpword{بارم} \hpword{بارم}
-\vsword{نمره} \hsword{نمره}
-\vtword{جمع نمرات} \htword{جمع نمرات}
-    \addpoints % required here by exam.cls, even though questions haven't started yet.  
-{\small
-    \gradetable[h]%[pages]  % Use [pages] to have grading table by page instead of question
-}
+$\includegraphics[width=1\linewidth]{figs/1.png}$
 
-%\baselineskip = 9mm
+فایل Draw.io مربوط به ERD پروژه، داخل پیوست قرار دارد. 
 
-\begin{questions}
-\pointpoints{نمره}{نمره}
+در این بخش توضیحات مربوط به روابط مختلف این ERD آورده شده است:
 
+\begin{itemize}
+	\item مورد
+	
+توضیحات
+	\item مورد 
 
-\question[10]
-کار برنامه زیر چیست؟ 
-\begin{latin}
-\begin{lstlisting}[language=C,breaklines=true]
-int main()
-{
-    char s[80];
-    int i;
-    gets(s);
-    for(i=0; s[i] != '\0'; i++)
-    {
-       if(s[i] == 'a') 
-         continue;
-       putchar(s[i]);
-    }
-}
-\end{lstlisting}
-\end{latin}
+توضیحات
+	\item مورد 
+
+توضیحات
+\end{itemize}
+\pagebreak
+
+\subsection*{\underline{جبر رابطه‌ای}}
+
+در این بخش پاسخ پرسمان‌های زیر با استفاده از جبر رابطه‌ای آورده شده است:
+
+\begin{enumerate}
+	\item
+‌هواپیماهایی که در ۲۹ اسفند از تهران به مشهد می‌روند و بیشتر از ۵ صندلی خالی دارند را پیدا کنید.
 
 
-\question 
-تابعی به نام 
-\lr{max}
-بنویسید که دو عدد صحیح را به عنوان آرگومان ورودی گرفته ماکزیمم آنها را برگرداند.
-\begin{parts}
-\part[10] با دو \lr{return}
-\part[10] با یک \lr{return}
-\end{parts}
 
-\question[20]
-تابعی بازگشتی بنویسید که عددی را به عنوان آرگومان گرفته (مثلاً $x$) سه به توان آنرا ($3^x$) محاسبه و برگرداند. اگر بازگشتی ننویسید، بخشی از نمره را از دست خواهید داد.
 
-\question[20]
-تابعی بنویسید که دو عدد صحیح را به عنوان آرگومان پذیرفته، حاصل ت
-سیم اولی بر دومی را محاسبه و برگرداند. اگر عدد دوم صفر است پیام مناسبی چاپ کنید. اگر تابع ننویسید بخشی از نمره را از دست خواهید داد.
+	\item
+هتل‌هایی که در تاریخ ۱ فروردین اتاق دو تخته‌ی خالی دارند و امکانات استخر و باشگاه و \linebreak امتیاز بالای ۴ دارند را پیدا کنید.
 
-\question[30]
-فرمول بسط سینوس به صورت زیر است:
 
-\[ sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} +  \cdots \]
 
-برنامه‌ای برای محاسبه  مجموع ۲۰ جمله اول آن بنویسید.
-در صورت تمایل می‌توانید تابعی برای محاسبه فاکتوریل بنویسید.
 
-\end{questions}
+	\item
+	 میزان تخفیفی که مشتریان با استفاده از کد تخفیف  norouz  دریافت کرده‌اند را حساب کنید.
+	 
+	 
+	 
+	 
+	\item
+	 تماس‌های پشتیبانی که در مورد هتل الماس بوده‌اند را پیداکنید.
+	 
+	 
+	 
+	 
+	 
+	\item
+مجموع هزینه‌هایی که‌ به واسطه باشگاه مشتریان در ماه فروردین کسر شده‌است را بیابید.
+
+
+
+
+	\item
+تعداد رزروهایی که در مدت معین پرداخت نشده، و لغو شده‌اند را بیابید.
+
+
+
+
+
+	\item
+تعداد مسافرین به تفکیک نوع سفر(قطار، اتوبوس، هواپیما) در تعطیلات نوروز(اول تا 13 فروردین ماه) را بیابید.
+
+
+
+
+
+	
+	\item
+	 آمار تعداد کنسلی رزروهای هتل‌ها در 5 شهر با بیشترین خرید بلیط به مقصد آنجا به‌ تفکیک ستاره هتل‌ها را بیابید.
+	 
+	 
+	 
+	 
+	
+	\item
+	 همه مسافرانی که در پرواز $W1296$ در تاریخ 6 فروردین برای همان روز در هتلی با بیشترین اتاق خالی رزرو دارند.
+	
+	
+	
+	
+	
+	\item
+	 مشتریانی را بیابید که برای تاریخ ۱ فروردین، بلیط به مقصد شهر بابلسر رزرو کرده‌اند و همچنین \linebreak با کد تخفیف ۳۰ هزار تومانی (که در بخش CRM به‌ آن اشاره شد) رزرو هتل خود را هم از سایت انجام داده‌اند.
+	 
+	 
+	 
+	 
+	
+\end{enumerate}
+
 \end{document}
