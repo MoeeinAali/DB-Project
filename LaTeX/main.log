@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  24 MAY 2024 15:44
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  24 MAY 2024 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -811,13 +811,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 خالی دارند و امکانات استخر و باشگاه و[]
  []
 
-(./relation-algebras/algeb2.tex)
-Overfull \hbox (71.31789pt too wide) in paragraph at lines 2--20
-[]$\OML/cmm/m/it/12 hotelReservation  \OMS/cmsy/m/n/12 ^^@  \OML/cmm/m/it/12 ^^
-[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 hotelReservation\OT1/cmr/m/n/12 )[] $[]
- []
-
-(./relation-algebras/algeb3.tex)
+(./relation-algebras/algeb2.tex) (./relation-algebras/algeb3.tex)
 Overfull \hbox (11.9697pt too wide) in paragraph at lines 2--27
 []$\OML/cmm/m/it/12 tripReservation .[]/[] walletWalletTransaction .[]/[] const
 antDiscountCode\OT1/cmr/m/n/12 ))[] $[]
