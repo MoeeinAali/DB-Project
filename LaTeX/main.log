@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  23 MAY 2024 17:50
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  24 MAY 2024 08:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -805,29 +805,41 @@ Overfull \hbox (8.91402pt too wide) in paragraph at lines 56--57
 آن cancelled-by-admin و اگر پول واریز نشود cancelled-[]
  []
 
-) [5] (./4.tex
-Underfull \hbox (badness 2409) in paragraph at lines 9--10
-[][]\TU/XBNiloofar.ttf(0)/b/n/12 با ‌فرض این‌ که منظور از صورت سوال نام هواپیما
-ها است و فرض می‌کنیم نام هواپیماها یکتا هستند،[]
- []
-
-(./relation-algebras/algeb1.tex)
+) [5] (./4.tex (./relation-algebras/algeb1.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
 [][]\TU/XBNiloofar.ttf(0)/b/n/12 هتل‌هایی که در تاریخ ۱ فروردین اتاق دو تخته‌ی 
 خالی دارند و امکانات استخر و باشگاه و[]
  []
 
 (./relation-algebras/algeb2.tex)
-Overfull \hbox (71.31789pt too wide) in paragraph at lines 2--21
+Overfull \hbox (71.31789pt too wide) in paragraph at lines 2--20
 []$\OML/cmm/m/it/12 hotelReservation  \OMS/cmsy/m/n/12 ^^@  \OML/cmm/m/it/12 ^^
 [[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 hotelReservation\OT1/cmr/m/n/12 )[] $[]
  []
 
-(./relation-algebras/algeb3.tex) (./relation-algebras/algeb4.tex)
+(./relation-algebras/algeb3.tex)
+Overfull \hbox (11.9697pt too wide) in paragraph at lines 2--27
+[]$\OML/cmm/m/it/12 tripReservation .[]/[] walletWalletTransaction .[]/[] const
+antDiscountCode\OT1/cmr/m/n/12 ))[] $[]
+ []
+
+
+Overfull \hbox (10.3413pt too wide) in paragraph at lines 2--27
+[]$\OML/cmm/m/it/12 tripReservation .[]/[] walletWalletTransaction .[]/[] perce
+ntDiscountCode\OT1/cmr/m/n/12 )))[] $[]
+ []
+
+(./relation-algebras/algeb4.tex)
+Overfull \hbox (26.16234pt too wide) in paragraph at lines 2--34
+[][]$[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 phoneCall .[]/[] ticket .[]/[] hotel
+Reservation .[]/[] ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 hotel\OT1/cmr/m/n/12 
+))[] $[]
+ []
+
 (./relation-algebras/algeb5.tex) (./relation-algebras/algeb6.tex)
-(./relation-algebras/algeb7.tex) (./relation-algebras/algeb8.tex)
-(./relation-algebras/algeb9.tex) [6]
-Underfull \hbox (badness 5260) in paragraph at lines 81--82
+(./relation-algebras/algeb7.tex) [6] (./relation-algebras/algeb8.tex)
+(./relation-algebras/algeb9.tex)
+Underfull \hbox (badness 5260) in paragraph at lines 80--81
 [][]\TU/XBNiloofar.ttf(0)/b/n/12 مشتریانی را بیابید که برای تاریخ ۱ فروردین، بل
 یط به مقصد شهر بابلسر رزرو کرده‌اند و همچنین[]
  []
