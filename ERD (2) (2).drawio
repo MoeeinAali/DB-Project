@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-24T11:02:36.531Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="kWeB8I1mtKcV0tLJdkVC" version="24.4.7" type="device" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-05-24T11:04:58.388Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="wm9Bo7wNmMWaZuKWraIH" version="24.4.7" type="device" pages="2">
   <diagram id="BFu8gxiRVt7DG3R1-FFP" name="ERD">
-    <mxGraphModel dx="2700" dy="1607" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2040" dy="1252" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1124,7 +1124,7 @@
         <mxCell id="xbVE17RI5nuYnqPjMe04-315" value="price" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="170.0020689655173" y="1509.9979310344827" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="xbVE17RI5nuYnqPjMe04-316" value="airplane_name" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="xbVE17RI5nuYnqPjMe04-316" value="air_trip_name" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="-19.99793103448269" y="1669.9979310344827" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="xbVE17RI5nuYnqPjMe04-317" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.606;entryY=0.03;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" parent="1" source="xbVE17RI5nuYnqPjMe04-299" target="xbVE17RI5nuYnqPjMe04-316" edge="1">
