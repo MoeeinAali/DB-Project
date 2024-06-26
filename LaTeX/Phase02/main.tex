@@ -1,0 +1,47 @@
+\documentclass[12pt]{exam}
+
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{graphicx,subfigure,wrapfig}
+\usepackage{multirow}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage[margin=20mm]{geometry}
+\usepackage{xepersian}
+\usepackage{fontspec}
+\settextfont[ExternalLocation]{XB Niloofar.ttf}
+   
+\newcommand{\class}{طراحی پایگاه داده‌ها}
+\newcommand{\term}{نیم‌سال دوم 02-03}
+\newcommand{\college}{دانشکده مهندسی کامپیوتر}
+\newcommand{\prof}{استاد: مهدی آخی }
+
+\singlespacing 
+\parindent 0ex
+
+\lstset{
+keywordstyle=\textbf,
+identifierstyle=, 
+stringstyle=\ttfamily,
+commentstyle=\color{LimeGreen}, 
+stringstyle=\ttfamily,
+numberstyle=\footnotesize,
+showstringspaces=false} 
+\begin{document}
+
+\include{info}
+\pagestyle{empty}
+\include{cover-page}
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{صفحه \thepage\ از \numpages}{ملیکا علیزاده - ثمین اکبری - معین آعلی}{\class}
+\runningheadrule
+
+\pagebreak
+
+\input{1.tex}
+
+
+
+\end{document}
