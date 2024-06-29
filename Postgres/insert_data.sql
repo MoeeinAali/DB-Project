@@ -37,28 +37,6 @@ VALUES (1, 2, '2024-01-01', 'text', 'Happy New Year!', '10:00:00'),
        (8, 9, '2024-09-05', 'text', 'Happy Teachers Day!', '09:10:00'),
        (10, 1, '2024-10-31', 'text', 'Happy Halloween!', '18:00:00');
 
-
--- phone_call_trip
-INSERT INTO phone_call_trip (caller_id, callee_id, duration, date, time)
-VALUES (8, 2, '00:05:30', '2024-06-01', '08:30:00'),
-       (8, 3, '00:12:00', '2024-06-02', '09:15:00'),
-       (8, 5, '00:07:45', '2024-06-03', '10:45:00'),
-       (8, 6, '00:03:30', '2024-06-04', '11:00:00'),
-       (8, 7, '00:15:00', '2024-06-05', '12:30:00'),
-       (8, 7, '00:10:00', '2024-06-06', '13:45:00'),
-       (8, 7, '00:04:15', '2024-06-07', '14:20:00'),
-       (8, 2, '00:08:30', '2024-06-08', '15:10:00'),
-       (8, 3, '00:06:00', '2024-06-09', '16:30:00'),
-       (8, 5, '00:09:00', '2024-06-10', '17:45:00');
-
--- phone_call_hotel
-INSERT INTO phone_call_hotel (caller_id, callee_id, duration, date, time)
-VALUES (1, 2, '00:05:23', '2024-06-20', '14:23:45'),
-       (1, 3, '00:02:45', '2024-06-21', '09:15:32'),
-       (1, 3, '00:07:12', '2024-06-22', '11:47:56'),
-       (1, 9, '00:03:34', '2024-06-23', '13:05:12'),
-       (1, 10, '00:04:18', '2024-06-24', '15:22:19');
-
 -- wallet
 INSERT INTO wallet (user_id, credit)
 VALUES (1, 100.50),
@@ -76,7 +54,7 @@ VALUES (1, 100.50),
 -- discount
 INSERT INTO discount (code, user_id, city, expiration_date, max_number_of_usages, service_type, amount, type, min_cost,
                       number_of_usage)
-VALUES ('DISC001', 1, 'Tehran', '2024-12-31', 10, 'Hotel', 50000, 'Numeric', 200000, 0),
+VALUES ('norouz', 1, 'Tehran', '2024-12-31', 10, 'Hotel', 50000, 'Numeric', 200000, 0),
        ('DISC002', 4, 'Mashhad', '2024-11-30', 5, 'Train', 15, 'Percentage', 150000, 1),
        ('DISC003', 4, 'Isfahan', '2024-10-31', 8, 'Plane', 100000, 'Numeric', 300000, 2),
        ('DISC004', 1, 'Shiraz', '2024-09-30', 12, 'Bus', 20, 'Percentage', 100000, 3),
@@ -118,18 +96,18 @@ VALUES (890, 1, true),
 
 
 -- hotel
-INSERT INTO hotel (type, name, address, cancel_rule, score, phone_number)
-VALUES (1, 'Grand Hotel', '123 Main St, Cityville', 'Free cancellation within 24 hours', 4.5, '123-456-7890'),
-       (2, 'Ocean View Resort', '456 Beach Rd, Ocean City', 'No cancellation', 4.8, '987-654-3210'),
-       (3, 'Mountain Lodge', '789 Hill St, Mountain Town', 'Free cancellation up to 48 hours before check-in', 4.2,
+INSERT INTO hotel (type, name, address, city, cancel_rule, score, phone_number)
+VALUES (1, 'Grand Hotel', '123 Main St, Cityville', 'Cityville', 'Free cancellation within 24 hours', 4.5, '123-456-7890'),
+       (2, 'Ocean View Resort', '456 Beach Rd, Ocean City', 'Ocean City', 'No cancellation', 4.8, '987-654-3210'),
+       (3, 'Mountain Lodge', '789 Hill St, Mountain Town', 'Mountain Town', 'Free cancellation up to 48 hours before check-in', 4.2,
         '555-123-4567'),
-       (4, 'City Center Hotel', '101 Center St, Metropolis', 'No cancellation', 3.9, '555-987-6543'),
-       (5, 'Luxury Suites', '202 Luxury Blvd, Uptown', 'Free cancellation within 24 hours', 4.7, '555-555-5555'),
-       (3, 'Budget Inn', '303 Economy St, Suburbia', 'Free cancellation within 72 hours', 3.5, '555-678-9012'),
-       (2, 'Airport Hotel', '404 Flight Rd, Airport City', 'No cancellation', 3.8, '555-345-6789'),
-       (5, 'Countryside B&B', '505 Country Ln, Countryside', 'Free cancellation within 48 hours', 4.6, '555-765-4321'),
-       (5, 'Historic Hotel', '606 History Rd, Oldtown', 'Free cancellation within 24 hours', 4.3, '555-234-5678'),
-       (1, 'Modern Hotel', '707 Future St, Newtown', 'No cancellation', 4.1, '555-876-5432');
+       (4, 'City Center Hotel', '101 Center St, Metropolis', 'Metropolis', 'No cancellation', 3.9, '555-987-6543'),
+       (5, 'Luxury Suites', '202 Luxury Blvd, Uptown', 'Uptown', 'Free cancellation within 24 hours', 4.7, '555-555-5555'),
+       (3, 'Budget Inn', '303 Economy St, Suburbia', 'Suburbia', 'Free cancellation within 72 hours', 3.5, '555-678-9012'),
+       (2, 'Airport Hotel', '404 Flight Rd, Airport City', 'Airport City', 'No cancellation', 3.8, '555-345-6789'),
+       (5, 'Countryside B&B', '505 Country Ln, Countryside', 'Countryside', 'Free cancellation within 48 hours', 4.6, '555-765-4321'),
+       (5, 'Historic Hotel', '606 History Rd, Oldtown', 'Oldtown', 'Free cancellation within 24 hours', 4.3, '555-234-5678'),
+       (1, 'Modern Hotel', '707 Future St, Newtown', 'Newtown', 'No cancellation', 4.1, '555-876-5432');
 
 -- hotel_admin
 INSERT INTO hotel_admin (hotel_id, admin_id)
@@ -361,18 +339,18 @@ VALUES (890, 1, '2024-06-01', 100.00, 'Deposit', 'Completed'),
 
 
 -- wallet_tr
-INSERT INTO wallet_tr (giver_id, receiver_id, reservation_id, original_price, discount_amount, date, amount, type,
+INSERT INTO wallet_tr (giver_id, receiver_id, original_price, discount_amount, date, amount, type,
                        state)
-VALUES (1, 2, 101, 100.00, 10.00, '2024-06-01', 90.00, 'Payment', 'Completed'),
-       (2, 3, 102, 200.00, 20.00, '2024-06-02', 180.00, 'Refund', 'Pending'),
-       (3, 4, 103, 150.00, 15.00, '2024-06-03', 135.00, 'Transfer', 'Completed'),
-       (4, 5, 104, 50.00, 5.00, '2024-06-04', 45.00, 'Payment', 'Failed'),
-       (5, 6, 105, 300.00, 30.00, '2024-06-05', 270.00, 'Payment', 'Completed'),
-       (6, 7, 106, 400.00, 40.00, '2024-06-06', 360.00, 'Refund', 'Completed'),
-       (7, 8, 107, 250.00, 25.00, '2024-06-07', 225.00, 'Transfer', 'Pending'),
-       (8, 9, 108, 350.00, 35.00, '2024-06-08', 315.00, 'Payment', 'Completed'),
-       (9, 10, 109, 100.00, 10.00, '2024-06-09', 90.00, 'Refund', 'Completed'),
-       (10, 1, 110, 200.00, 20.00, '2024-06-10', 180.00, 'Transfer', 'Failed');
+VALUES (1, 1, 100.00, 10.00, '2024-06-01', 90.00, 'Payment', 'Completed'),
+       (2, 2, 200.00, 20.00, '2024-06-02', 180.00, 'Refund', 'Pending'),
+       (3, 3, 150.00, 15.00, '2024-06-03', 135.00, 'Transfer', 'Completed'),
+       (4, 4, 50.00, 5.00, '2024-06-04', 45.00, 'Payment', 'Failed'),
+       (5, 5, 300.00, 30.00, '2024-06-05', 270.00, 'Payment', 'Completed'),
+       (6, 6, 400.00, 40.00, '2024-06-06', 360.00, 'Refund', 'Completed'),
+       (7, 7, 250.00, 25.00, '2024-06-07', 225.00, 'Transfer', 'Pending'),
+       (8, 8, 350.00, 35.00, '2024-06-08', 315.00, 'Payment', 'Completed'),
+       (9, 9, 100.00, 10.00, '2024-06-09', 90.00, 'Refund', 'Completed'),
+       (10, 10, 200.00, 20.00, '2024-06-10', 180.00, 'Transfer', 'Failed');
 
 
 -- trip_reservation
@@ -387,14 +365,14 @@ VALUES (1, '2', 1, '2024-07-01', FALSE, 'Confirmed', 10),
 
 
 -- hotel_reservation
-INSERT INTO hotel_reservation (transaction_id, hotel_id, user_id, reserve_date, duration, state, start_date)
-VALUES (1, 1, 2, '2024-07-01', '3 days', 'Confirmed', '2024-07-05'),
-       (2, 2, 2, '2024-07-02', '2 days', 'Pending', '2024-07-10'),
-       (3, 3, 3, '2024-07-03', '5 days', 'Confirmed', '2024-07-15'),
-       (4, 4, 5, '2024-07-04', '1 day', 'Cancelled', '2024-07-08'),
-       (5, 5, 5, '2024-07-05', '4 days', 'Confirmed', '2024-07-12'),
-       (6, 6, 6, '2024-07-06', '2 days', 'Pending', '2024-07-20'),
-       (7, 7, 7, '2024-07-07', '3 days', 'Confirmed', '2024-07-18');
+INSERT INTO hotel_reservation (transaction_id, hotel_id, room_id, user_id, reserve_date, duration, state, start_date)
+VALUES (1, 1, 1, 2, '2024-07-01', '3 days', 'Confirmed', '2024-07-05'),
+       (2, 2, 3, 2, '2024-07-02', '2 days', 'Pending', '2024-07-10'),
+       (3, 3, 5, 3, '2024-07-03', '5 days', 'Confirmed', '2024-07-15'),
+       (4, 4,7, 5, '2024-07-04', '1 day', 'Cancelled', '2024-07-08'),
+       (5, 5,9, 5, '2024-07-05', '4 days', 'Confirmed', '2024-07-12'),
+       (6, 6,11, 6, '2024-07-06', '2 days', 'Pending', '2024-07-20'),
+       (7, 7,13, 7, '2024-07-07', '3 days', 'Confirmed', '2024-07-18');
 
 
 -- discount_usage_trip
@@ -408,9 +386,9 @@ VALUES ('DISC002', 2),
 
 -- discount_usage_hotel
 INSERT INTO discount_usage_hotel (discount_code, reservation_id)
-VALUES ('DISC001', 1),
+VALUES ('norouz', 1),
        ('DISC008', 2),
-       ('DISC001', 3);
+       ('norouz', 3);
 
 -- trip_survey
 INSERT INTO trip_survey (trip_number, user_id, comment, score)
@@ -463,3 +441,25 @@ VALUES ('Upgrade', 1),
        ('Maintenance', 5),
        ('Modification', 6),
        ('Check-in', 7);
+
+
+-- phone_call_trip
+INSERT INTO phone_call_trip (caller_id, callee_id, ticket_id, duration, date, time)
+VALUES (8, 2, 1, '00:05:30', '2024-06-01', '08:30:00'),
+       (8, 3, 2, '00:12:00', '2024-06-02', '09:15:00'),
+       (8, 5, 3, '00:07:45', '2024-06-03', '10:45:00'),
+       (8, 6, 4, '00:03:30', '2024-06-04', '11:00:00'),
+       (8, 7, 1, '00:15:00', '2024-06-05', '12:30:00'),
+       (8, 7, 5, '00:10:00', '2024-06-06', '13:45:00'),
+       (8, 7, 3, '00:04:15', '2024-06-07', '14:20:00'),
+       (8, 2, 5, '00:08:30', '2024-06-08', '15:10:00'),
+       (8, 3, 2, '00:06:00', '2024-06-09', '16:30:00'),
+       (8, 5, 2, '00:09:00', '2024-06-10', '17:45:00');
+
+-- phone_call_hotel
+INSERT INTO phone_call_hotel (caller_id, callee_id,ticket_id, duration, date, time)
+VALUES (1, 2, 1, '00:05:23', '2024-06-20', '14:23:45'),
+       (1, 3, 3, '00:02:45', '2024-06-21', '09:15:32'),
+       (1, 3, 4, '00:07:12', '2024-06-22', '11:47:56'),
+       (1, 9, 2, '00:03:34', '2024-06-23', '13:05:12'),
+       (1, 10, 1, '00:04:18', '2024-06-24', '15:22:19');

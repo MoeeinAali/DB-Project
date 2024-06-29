@@ -35,37 +35,6 @@ CREATE TABLE SMS
             REFERENCES user_account (account_id)
 );
 
-CREATE TABLE phone_call_trip
-(
-    phone_call_id SERIAL not null PRIMARY KEY,
-    caller_id     INT    not null,
-    callee_id     INT    not null,
-    duration      INTERVAL,
-    date          DATE,
-    time          TIME,
-    CONSTRAINT fk_caller
-        FOREIGN KEY (caller_id)
-            REFERENCES user_account (account_id),
-    CONSTRAINT fk_callee
-        FOREIGN KEY (callee_id)
-            REFERENCES user_account (account_id)
-);
-
-CREATE TABLE phone_call_hotel
-(
-    phone_call_id SERIAL not null PRIMARY KEY,
-    caller_id     INT    not null,
-    callee_id     INT    not null,
-    duration      INTERVAL,
-    date          DATE,
-    time          TIME,
-    CONSTRAINT fk_caller
-        FOREIGN KEY (caller_id)
-            REFERENCES user_account (account_id),
-    CONSTRAINT fk_callee
-        FOREIGN KEY (callee_id)
-            REFERENCES user_account (account_id)
-);
 
 CREATE TABLE wallet
 (
@@ -119,6 +88,7 @@ CREATE TABLE hotel
     type         INT             not null,
     name         TEXT            not null,
     address      TEXT            not null,
+    city TEXT not null,
     cancel_rule  TEXT            not null,
     score        float default 0 not null,
     phone_number TEXT            not null
@@ -287,7 +257,6 @@ CREATE TABLE wallet_tr
     transaction_id  SERIAL not null PRIMARY KEY,
     giver_id        INT,
     receiver_id     INT,
-    reservation_id  INT,
     original_price  DECIMAL,
     discount_amount DECIMAL,
     date            DATE,
@@ -328,6 +297,7 @@ CREATE TABLE hotel_reservation
     reserve_id     SERIAL not null PRIMARY KEY,
     transaction_id INT,
     hotel_id       INT,
+    room_id INT,
     user_id        INT,
     reserve_date   DATE,
     duration       INTERVAL,
@@ -336,6 +306,9 @@ CREATE TABLE hotel_reservation
     CONSTRAINT fk_hotel
         FOREIGN KEY (hotel_id)
             REFERENCES hotel (hotel_id),
+    CONSTRAINT fk_room
+        FOREIGN KEY (room_id)
+            REFERENCES room (room_id),
     CONSTRAINT fk_admin
         FOREIGN KEY (user_id)
             REFERENCES user_account (account_id),
@@ -437,6 +410,47 @@ CREATE TABLE hotel_ticket
         FOREIGN KEY (examiner_id)
             REFERENCES user_account (account_id)
 );
+
+CREATE TABLE phone_call_hotel
+(
+    phone_call_id SERIAL not null PRIMARY KEY,
+    caller_id     INT    not null,
+    callee_id     INT    not null,
+    ticket_id     int    not null,
+    duration      INTERVAL,
+    date          DATE,
+    time          TIME,
+    CONSTRAINT fk_caller
+        FOREIGN KEY (caller_id)
+            REFERENCES user_account (account_id),
+    CONSTRAINT fk_callee
+        FOREIGN KEY (callee_id)
+            REFERENCES user_account (account_id),
+    CONSTRAINT fk_ticket
+        FOREIGN KEY (ticket_id)
+            REFERENCES hotel_ticket (ticket_id)
+);
+
+CREATE TABLE phone_call_trip
+(
+    phone_call_id SERIAL not null PRIMARY KEY,
+    caller_id     INT    not null,
+    callee_id     INT    not null,
+    ticket_id     int    not null,
+    duration      INTERVAL,
+    date          DATE,
+    time          TIME,
+    CONSTRAINT fk_caller
+        FOREIGN KEY (caller_id)
+            REFERENCES user_account (account_id),
+    CONSTRAINT fk_callee
+        FOREIGN KEY (callee_id)
+            REFERENCES user_account (account_id),
+    CONSTRAINT fk_ticket
+        FOREIGN KEY (ticket_id)
+            REFERENCES trip_ticket (ticket_id)
+);
+
 
 CREATE TABLE ticket_type_priority
 (
