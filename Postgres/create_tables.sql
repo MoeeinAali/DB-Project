@@ -88,7 +88,7 @@ CREATE TABLE hotel
     type         INT             not null,
     name         TEXT            not null,
     address      TEXT            not null,
-    city         TEXT            not null,
+    city TEXT not null,
     cancel_rule  TEXT            not null,
     score        float default 0 not null,
     phone_number TEXT            not null
@@ -241,7 +241,6 @@ CREATE TABLE wallet_account_tr
     bank_account_number INT,
     user_id             INT,
     date                DATE,
-    token               TEXT,
     amount              DECIMAL,
     type                TEXT,
     state               TEXT,
@@ -298,7 +297,7 @@ CREATE TABLE hotel_reservation
     reserve_id     SERIAL not null PRIMARY KEY,
     transaction_id INT,
     hotel_id       INT,
-    room_id        INT,
+    room_id INT,
     user_id        INT,
     reserve_date   DATE,
     duration       INTERVAL,
@@ -461,13 +460,27 @@ CREATE TABLE ticket_type_priority
 
 CREATE TABLE search_history
 (
-    customer_id int  not null,
-    trip_id     TEXT not null,
-    PRIMARY KEY (customer_id, trip_id),
-    CONSTRAINT fk_customer
-        FOREIGN KEY (customer_id)
-            REFERENCES user_account (account_id),
-    CONSTRAINT fk_trip
-        FOREIGN KEY (trip_id)
-            REFERENCES trip (trip_id)
-) ک
+customer_id int not null,
+trip_id TEXT not null,
+PRIMARY KEY(customer_id, trip_id),
+CONSTRAINT fk_customer
+FOREIGN KEY (customer_id)
+REFERENCES user_account (account_id),
+CONSTRAINT fk_trip
+FOREIGN KEY (trip_id)
+REFERENCES trip (trip_id)
+)
+
+
+
+-- CREATE INDEX hotel_name_index
+-- ON hotel(name);
+--
+-- CREATE INDEX user_name_index
+-- ON user_account(name);
+--
+-- CREATE INDEX hotel_type_index
+-- ON hotel(type);
+
+-- CREATE INDEX company_score_index
+-- ON company(score);
