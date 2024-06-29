@@ -1,0 +1,217 @@
+\subsection*{\underline{ساخت سرویس برای API Rest}}
+
+برای زدن این بخش مجبور شدیم که با انواع ریکوئست‌های HTTP آشنا بشویم. در اینجا نیاز بود یک فریمورک برای پیاده‌سازی وب‌سرویس بک‌اندی خودمون انتخاب کنیم.
+
+ما از زبان برنامه‌نویسی JS و فریمورک Fastify استفاده کردیم و وب‌سرویس را پیاده‌سازی کردیم.
+
+همچنین برای زدن ریکوئست‌های Post از ابزار Postman استفاده کردیم که در ادامه به آن اشاره خواهیم‌کرد.
+
+
+\setLTR
+\begin{lstlisting}
+const fastify = require("fastify")();
+
+fastify.register(require("@fastify/postgres"), {
+    connectionString: "postgres://postgres:1162m@localhost:5432/db_project"
+
+});
+\end{lstlisting}
+\setRTL
+در اینجا کتابخانه Fastify را فراخوانی میکنیم و سپس با استفاده از آن به دیتابیس خود که روی localhost و پورت 5432 بالا است وصل میشویم.
+\setLTR
+\begin{lstlisting}    
+fastify.get("/balance", async (req, res) => {
+    const userId = req.query?.userId;
+
+    if (!userId) {
+        return res.status(400).send("Please Enter userId ...");
+    }
+
+    const query = `
+        SELECT user_id, credit
+        FROM user_account
+        JOIN wallet ON wallet.user_id = user_account.account_id
+        WHERE user_account.account_id = $1
+    `;
+
+    try {
+        const result = await fastify.pg.query(query, [userId]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).send("User not found");
+        }
+
+        res.send(result.rows[0]);
+    } catch (err) {
+        console.error("Database query error: ", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+\end{lstlisting}
+\setRTL
+در این بخش اولین ریکوئست ما هندل شده است. این ریکوئست از نوع Get است و با استفاده از userID ما میزان موجودی آن کاربر را به همراه Id برمیگردانیم. یک نمونه از کارکرد این API به این صورت است:
+
+\qquad \qquad \qquad \includegraphics[width=0.7\linewidth]{figs/api1.jpg}
+\pagebreak
+\setLTR
+\begin{lstlisting} 
+fastify.post("/charge", async (req, res) => {
+    const userId = req.body?.userId;
+    const amount = req.body?.amount;
+
+    const query = `
+    SELECT ACCOUNT_NUMBER
+        FROM bank_user
+        WHERE user_id = $1;
+    `
+    const query2 = `
+    INSERT INTO wallet_account_tr (token, bank_account_number, user_id, date, amount, type, state)
+    VALUES ('6527924beb4743c59bab8dxxxxxxxxxx', $1, $2, '2024-06-01', $3, 'Deposit', 'Pending');
+    `
+    if (!(userId && amount)) res.send("Please enter userId and amount ...");
+    try {
+        let result = await fastify.pg.query(query, [userId])
+        const accountNumber = result.rows[0].account_number
+        result = await fastify.pg.query(query2, [accountNumber, userId, amount])
+        res.send({ "url": "https://sep.shaparak.ir/OnlinePG", "token": "6527924beb4743c59bab8dxxxxxxxxxx" });
+    } catch (error) {
+        console.error("Database query error: ", err);
+        res.status(500).send("Internal Server Error");
+    }
+
+});
+\end{lstlisting}
+\setRTL
+ریکوئست این بخش از نوع Post است که که تراکنش ایجاد کرده و لینک درگاه پرداخت به همراه یک توکن به وی برگردانده میشود. کارکرد این API به این صورت است:
+
+\qquad \qquad \qquad \includegraphics[width=0.7\linewidth]{figs/api2.jpg}
+
+
+البته مقدار توکن را به صورت هاردکد قرار دادیم چون تولید یک توکن یکتا و ذخیره آن جزوی از سرویس ما نیست و باید داخل یک سرویس دیگر پیاده سازی شود و ما از آن استفاده کنیم.
+\pagebreak
+\setLTR
+\begin{lstlisting} 
+fastify.post("/verify", async (req, res) => {
+    const userId = req.body?.userId;
+    const token = req.body?.token;
+    const amount = req.body?.amount;
+    if (!token) res.send("Please enter token ...");
+    const query = `
+    UPDATE wallet_account_tr
+    SET state = 'Completed'
+    WHERE token = $1 and user_id = $2;
+    `
+
+    const query2 = `
+    SELECT credit
+    from wallet
+    where user_id = $1
+    `
+
+    const query3 = `
+    UPDATE wallet
+    SET credit = $2
+    WHERE user_id = $1;
+    `
+    try {
+        let result = await fastify.pg.query(query, [token, userId])
+        let credit_old = await fastify.pg.query(query2, [userId])
+        result = await fastify.pg.query(query3, [userId, credit_old.rows[0].credit + amount])
+        res.send({ "status": "verified" }); credit
+    } catch (error) {
+        console.error("Database query error: ", err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+\end{lstlisting}
+\setRTL
+این بخش همانند API قبلی از نوع Post است و باید یک ریکوئست بزنیم و تراکنش قبلی را تایید و ثبت کنیم. کارکرد این API به این صورت است:
+
+\qquad \qquad \qquad \includegraphics[width=0.7\linewidth]{figs/api3.jpg}
+
+\pagebreak
+\setLTR
+\begin{lstlisting} 
+fastify.get("/history", async (req, res) => {
+    const userId = req.query?.userId;
+    if (!userId) return res.send("Please Enter userId ...");
+
+    const page = req.query?.page;
+    const limit = req.query?.limit;
+    const offset = (page - 1) * limit;
+
+    const query_offset = `
+    SELECT date, amount, type, state
+    FROM wallet_account_tr
+    WHERE user_id = $1
+    AND state = 'Completed'
+    ORDER BY date
+    LIMIT $2 OFFSET $3
+    `;
+
+    const query = `
+    SELECT date, amount, type, state
+    FROM wallet_account_tr
+    WHERE user_id = $1
+    AND state = 'Completed'
+    order by date
+    `;
+
+    if (page && limit) {
+        try {
+            const result = await fastify.pg.query(query_offset, [userId, limit, offset]);
+            res.send(result.rows);
+        } catch (err) {
+            console.error("Database query error: ", err);
+            res.status(500).send("Internal Server Error");
+        }
+
+    } else {
+        try {
+            const result = await fastify.pg.query(query, [userId]);
+            res.send(result.rows);
+        } catch (err) {
+            console.error("Database query error: ", err);
+            res.status(500).send("Internal Server Error");
+        }
+    }
+});
+\end{lstlisting}
+\setRTL
+در این بخش که آخرین API است یک ریکوئست Get داریم که به دو صورت می تواند باشد، یکی اینکه فقط با userID ریکوئست را بزند و یکی این که علاوه بر آن به ما page و limit هم بدهد تا کوئری ای بزنیم که مناسب pagination در صفحات وب است. کارکرد این API بدین صورت است:
+
+\qquad \qquad \qquad \includegraphics[width=0.7\linewidth]{figs/api4.jpg}
+
+می بینید که همه تراکنش های موفق آن کاربر به ترتیب تاریخ برای ما برگردانده شده است. 
+حال اگر ریکوئست را برای Pagination بزنیم، به این صورت است:
+
+\qquad \qquad \qquad \includegraphics[width=0.7\linewidth]{figs/api5.jpg}
+\setLTR
+\begin{lstlisting}    
+fastify.listen({ port: 3000, host: "0.0.0.0" }, (err) => {
+    if (err) throw err;
+    console.log(`server listening on ${fastify.server.address().port}`);
+});    
+\end{lstlisting}
+\setRTL
+
+در آخر این وب سرویس را روی پورت 3000 اجرا کرده و ریکوئست ها را با استفاده از postman می زنیم.
+
+\pagebreak
+
+همچنین در وب سرویس ما تا جای ممکن ارور ها را هندل کردیم، به عنوان مثال اگر یوزری پیدا نمیشد ارور مخصوص میدهیم:
+
+\qquad \qquad \qquad \includegraphics[width=0.7\linewidth]{figs/api6.jpg}
+
+
+یا اینکه اگر یک سری از فیلدها خالی باشد موقع ریکوئست زدن، ما ارور مناسب برمیگردانیم:
+
+\qquad \qquad \qquad \includegraphics[width=0.7\linewidth]{figs/api7.jpg}
+
+
+
+همچنین در همه جا از try و catch استفاده کردیم تا ارورهای احتمالی دیتابیس باعث توقف سرویس ما نشود.
+
+
+
+

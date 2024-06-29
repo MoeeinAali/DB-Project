@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  26 JUN 2024 19:07
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  29 JUN 2024 23:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -136,6 +136,27 @@ File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
 Package: listings 2023/02/27 1.9 (Carsten Heinz)
 
+(c:/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+
+(c:/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+)
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+)
 (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -149,10 +170,7 @@ Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 107.
-
-(c:/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
-))
+)
 \Gin@req@height=\dimen148
 \Gin@req@width=\dimen149
 )
@@ -529,6 +547,17 @@ gine
 File: article-xetex-bidi.def 2017/06/09 v0.6 bidi adaptations for standard arti
 cle class for XeTeX engine
 )
+(c:/texlive/2023/texmf-dist/tex/xelatex/bidi/color-xetex-bidi.def
+File: color-xetex-bidi.def 2013/04/08 v0.2 bidi adaptations for color package f
+or XeTeX engine
+LaTeX Info: Redefining \color on input line 49.
+)
+(c:/texlive/2023/texmf-dist/tex/xelatex/bidi/xcolor-xetex-bidi.def
+File: xcolor-xetex-bidi.def 2022/06/13 v0.3 bidi adaptations for xcolor package
+ for XeTeX engine
+LaTeX Info: Redefining \color on input line 48.
+LaTeX Info: Redefining \bidicolor on input line 91.
+)
 (c:/texlive/2023/texmf-dist/tex/xelatex/bidi/wrapfig-xetex-bidi.def
 File: wrapfig-xetex-bidi.def 2014/04/23 v0.3 bidi adaptations for wrapfig packa
 ge for XeTeX engine
@@ -679,49 +708,37 @@ apping=persian-tex-text;"
 (./main.aux (./info.aux) (./cover-page.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 9.
 
 (c:/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 \c@lstlisting=\count389
-
-(c:/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
-
-(c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: xetex.def on input line 149.
-
-(c:/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 29.
- (./main.out)
-(./main.out)
+Package hyperref Info: Link coloring ON on input line 59.
+ (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
-
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -786,25 +803,34 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 3.
+(Font)              <6> on input line 5.
 File: figs/0.png Graphic file (type bmp)
 <figs/0.png>
- [3]) (./3.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+[][]
+ []
+
+[3]) (./3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+[][]
+ []
+
 File: figs/1-1.png Graphic file (type bmp)
 <figs/1-1.png>
 File: figs/1-2.png Graphic file (type bmp)
 <figs/1-2.png>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 3--5
-[][][][]  [][][] []
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 8--10
+[][][][][]  [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 [][]
  []
 
@@ -813,36 +839,31 @@ File: figs/2-1.jpg Graphic file (type bmp)
 File: figs/2-2.jpg Graphic file (type bmp)
 <figs/2-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 10--12
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 15--17
 [][][][][]  [][][] []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-[][]
- []
-
+[4]
 File: figs/3-1.jpg Graphic file (type bmp)
 <figs/3-1.jpg>
 File: figs/3-2.jpg Graphic file (type bmp)
 <figs/3-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 17--19
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 22--24
 [][][][][]  [][][] []
  []
 
-[4]
 File: figs/4-1.jpg Graphic file (type bmp)
 <figs/4-1.jpg>
 File: figs/4-2.jpg Graphic file (type bmp)
 <figs/4-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 24--26
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 28--30
 [][][][][]  [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
 [][]
  []
 
@@ -851,12 +872,12 @@ File: figs/5-1.jpg Graphic file (type bmp)
 File: figs/5-2.jpg Graphic file (type bmp)
 <figs/5-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 31--33
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 35--37
 [][][][][]  [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 [][]
  []
 
@@ -865,12 +886,12 @@ File: figs/6-1.jpg Graphic file (type bmp)
 File: figs/6-2.jpg Graphic file (type bmp)
 <figs/6-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 38--40
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 42--44
 [][][][][]  [][][] []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 [][]
  []
 
@@ -879,17 +900,16 @@ File: figs/7-1.jpg Graphic file (type bmp)
 File: figs/7-2.jpg Graphic file (type bmp)
 <figs/7-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 45--48
-[][][][][]  [][][][]
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 49--51
+[][][][][]  [][][] []
  []
 
-[5]
 File: figs/8-1.jpg Graphic file (type bmp)
 <figs/8-1.jpg>
 File: figs/8-2.jpg Graphic file (type bmp)
 <figs/8-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 50--53
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 54--57
 [][][][]  [][][] []
  []
 
@@ -898,7 +918,7 @@ File: figs/9-1.jpg Graphic file (type bmp)
 File: figs/9-2.jpg Graphic file (type bmp)
 <figs/9-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 57--60
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 61--64
 [][][][]  [][][] []
  []
 
@@ -907,7 +927,7 @@ File: figs/10-1.jpg Graphic file (type bmp)
 File: figs/10-2.jpg Graphic file (type bmp)
 <figs/10-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 64--67
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 68--71
 [][][][]  [][][] []
  []
 
@@ -917,7 +937,7 @@ File: figs/11-1.jpg Graphic file (type bmp)
 File: figs/11-2.jpg Graphic file (type bmp)
 <figs/11-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 70--73
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 74--77
 [][][][]  [][][] []
  []
 
@@ -926,7 +946,7 @@ File: figs/12-1.jpg Graphic file (type bmp)
 File: figs/12-2.jpg Graphic file (type bmp)
 <figs/12-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 78--81
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 82--85
 [][][][]  [][][] []
  []
 
@@ -935,11 +955,88 @@ File: figs/13-1.jpg Graphic file (type bmp)
 File: figs/13-2.jpg Graphic file (type bmp)
 <figs/13-2.jpg>
 
-Overfull \hbox (3.90623pt too wide) in paragraph at lines 84--87
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 88--91
 [][][][]  [][][] []
  []
 
-[7]) [8]
+File: figs/14-1.jpg Graphic file (type bmp)
+<figs/14-1.jpg>
+[7]
+File: figs/15-1.jpg Graphic file (type bmp)
+<figs/15-1.jpg>
+File: figs/16-1.png Graphic file (type bmp)
+<figs/16-1.png>
+File: figs/16-2.jpg Graphic file (type bmp)
+<figs/16-2.jpg>
+
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 107--110
+[][][][]  [][][] []
+ []
+
+File: figs/17-1.jpg Graphic file (type bmp)
+<figs/17-1.jpg>
+File: figs/17-2.jpg Graphic file (type bmp)
+<figs/17-2.jpg>
+
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 114--117
+[][][][]  [][][] []
+ []
+
+[8]
+File: figs/18-1.jpg Graphic file (type bmp)
+<figs/18-1.jpg>
+File: figs/18-2.jpg Graphic file (type bmp)
+<figs/18-2.jpg>
+
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 120--123
+[][][][]  [][][] []
+ []
+
+File: figs/19-1.jpg Graphic file (type bmp)
+<figs/19-1.jpg>
+File: figs/19-2.jpg Graphic file (type bmp)
+<figs/19-2.jpg>
+) (./4.tex
+Overfull \hbox (3.90623pt too wide) in paragraph at lines 124--1
+[][][][]  [][][][]
+ []
+
+[9] [10] [11] [12] [13] [14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 494--496
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--499
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--502
+[][]
+ []
+
+) [17] (./5.tex
+File: figs/api1.jpg Graphic file (type bmp)
+<figs/api1.jpg>
+ [18]
+File: figs/api2.jpg Graphic file (type bmp)
+<figs/api2.jpg>
+ [19]
+File: figs/api3.jpg Graphic file (type bmp)
+<figs/api3.jpg>
+ [20]
+File: figs/api4.jpg Graphic file (type bmp)
+<figs/api4.jpg>
+ [21]
+File: figs/api5.jpg Graphic file (type bmp)
+<figs/api5.jpg>
+ [22]
+File: figs/api6.jpg Graphic file (type bmp)
+<figs/api6.jpg>
+File: figs/api7.jpg Graphic file (type bmp)
+<figs/api7.jpg>
+) [23]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./main.aux (./info.aux) (./cover-page.aux))
 
@@ -949,12 +1046,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16114 strings out of 476683
- 316677 string characters out of 5807575
- 1848012 words of memory out of 5000000
- 36062 multiletter control sequences out of 15000+600000
- 516456 words of font info for 65 fonts, out of 8000000 for 9000
+ 16959 strings out of 476683
+ 328247 string characters out of 5807575
+ 2117012 words of memory out of 5000000
+ 36869 multiletter control sequences out of 15000+600000
+ 516488 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 87i,11n,91p,1311b,335s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,11n,91p,1311b,1741s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (8 pages).
+Output written on main.pdf (23 pages).

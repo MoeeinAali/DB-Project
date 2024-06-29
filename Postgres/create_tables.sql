@@ -471,17 +471,3 @@ CONSTRAINT fk_trip
 FOREIGN KEY (trip_id)
 REFERENCES trip (trip_id)
 )
-
-
-
-CREATE INDEX hotel_name_index
-ON hotel(name);
-
-CREATE INDEX user_name_index
-ON user_account(name);
-
-CREATE INDEX hotel_type_index
-ON hotel(type);
-
-CREATE INDEX company_score_index
-ON company(score);
