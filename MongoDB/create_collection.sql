@@ -5,28 +5,22 @@ db.createCollection("trip_ticket", {
             required: ["trip_reservation_id", "user_id", "examiner_id", "message", "type"],
             properties: {
                 trip_reservation_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 company_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 user_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 examiner_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 message: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 },
                 type: {
-                    enum: ["text", "not satisfied"],
-                    description: "can only be 'text' or 'not satisfied' and is required"
+                    enum: ["text", "not satisfied"]
                 }
             }
         }
@@ -41,24 +35,19 @@ db.createCollection("hotel_ticket", {
             required: ["hotel_reservation_id", "user_id", "examiner_id", "message", "type"],
             properties: {
                 hotel_reservation_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 user_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 examiner_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 message: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 },
                 type: {
-                    enum: ["text", "cancel"],
-                    description: "can only be 'text' or 'cancel' and is required"
+                    enum: ["text", "cancel"]
                 }
             }
         }
@@ -72,12 +61,10 @@ db.createCollection("ticket_type_priority", {
             required: ["type", "priority"],
             properties: {
                 type: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 },
                 priority: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 }
             }
         }
@@ -91,32 +78,25 @@ db.createCollection("phone_call_trip", {
             required: ["caller_id", "callee_id", "ticket_id", "duration", "date", "time"],
             properties: {
                 caller_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 callee_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 ticket_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 duration: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 },
                 date: {
-                    bsonType: "date",
-                    description: "must be a date and is required"
+                    bsonType: "date"
                 },
                 time: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 },
                 content: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 }
             }
         }
@@ -130,32 +110,25 @@ db.createCollection("phone_call_hotel", {
             required: ["caller_id", "callee_id", "ticket_id", "duration", "date", "time"],
             properties: {
                 caller_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 callee_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 ticket_id: {
-                    bsonType: "int",
-                    description: "must be an integer and is required"
+                    bsonType: "int"
                 },
                 duration: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 },
                 date: {
-                    bsonType: "date",
-                    description: "must be a date and is required"
+                    bsonType: "date"
                 },
                 time: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 },
                 content: {
-                    bsonType: "string",
-                    description: "must be a string and is required"
+                    bsonType: "string"
                 }
             }
         }
