@@ -1,3 +1,13 @@
+CREATE INDEX idx_hotel_name ON hotel (name);
+
+CREATE INDEX idx_user_name ON user_account (name);
+
+CREATE INDEX idx_hotel_type ON hotel (type);
+
+CREATE INDEX idx_company_score ON company (score);
+
+-- more indexes
+
 CREATE INDEX idx_trip_start_date_vehicle_name ON trip (start_date, vehicle_name);
 
 CREATE INDEX idx_vehicle_type_vehicle_name ON vehicle (type, vehicle_name);
