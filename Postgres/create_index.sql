@@ -24,10 +24,6 @@ CREATE INDEX idx_discount_usage_hotel_discount_code ON discount_usage_hotel (dis
 
 CREATE INDEX idx_trip_reservation_state_trip_number ON trip_reservation (state, trip_number);
 
-CREATE INDEX idx_trip_start_date_vehicle_name ON trip (start_date, vehicle_name);
-
-CREATE INDEX idx_trip_reservation_state_trip_number ON trip_reservation (state, trip_number);
-
 CREATE INDEX idx_hotel_city_hotel_id ON hotel (city, hotel_id);
 
 CREATE INDEX idx_trip_reservation_user_id_trip_number ON trip_reservation (user_id, trip_number);
