@@ -241,6 +241,7 @@ CREATE TABLE wallet_account_tr
     bank_account_number INT,
     user_id             INT,
     date                DATE,
+    token               TEXT,
     amount              DECIMAL,
     type                TEXT,
     state               TEXT,
@@ -473,14 +474,14 @@ REFERENCES trip (trip_id)
 
 
 
--- CREATE INDEX hotel_name_index
--- ON hotel(name);
---
--- CREATE INDEX user_name_index
--- ON user_account(name);
---
--- CREATE INDEX hotel_type_index
--- ON hotel(type);
+CREATE INDEX hotel_name_index
+ON hotel(name);
 
--- CREATE INDEX company_score_index
--- ON company(score);
+CREATE INDEX user_name_index
+ON user_account(name);
+
+CREATE INDEX hotel_type_index
+ON hotel(type);
+
+CREATE INDEX company_score_index
+ON company(score);
