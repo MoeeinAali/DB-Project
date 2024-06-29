@@ -124,3 +124,41 @@ $\\$
 $\\$
 \includegraphics[width=0.5\linewidth]{figs/19-1.jpg} \
 \includegraphics[width=0.5\linewidth]{figs/19-2.jpg} 
+
+\pagebreak
+
+در همه انواع ترمینال لوکیشن میتواند کشور را مشخص کند، و لوکیشن یک ck نیست. برای تبدیل به 3nf باید این مورد رفع شود. یک موجودیت ضعیف برای این مورد میسازیم و ویژگی کشور را از ترمینال حذف میکنیم.
+
+\setLTR
+pageterminal-id — < location
+
+location — < country
+\setRTL
+
+
+این یک transitive dependency است.
+(در اینجا فرض شده که ممکن است دو ترمینال لوکیشن‎های مشابه داشته باشند.)
+
+
+$\\$
+\includegraphics[width=0.7\linewidth]{figs/a1.jpg} \
+
+
+در اینجا هم بین type و priority وابستگی وجود دارد.
+
+\setLTR
+ticket-id — < type
+
+type — < priority
+\setRTL
+
+این یک transitive dependency است که با 3nf در تناقض است. بنابراین باید priority از این تیبل خارج شود و در جدولی قرار داده شود که تایپ، primary key آن است.
+
+\includegraphics[width=0.7\linewidth]{figs/a2.jpg} \
+
+\pagebreak
+
+$\\ \\$
+\includegraphics[width=0.7\linewidth]{figs/b1.jpg} \
+$\\$
+\includegraphics[width=0.7\linewidth]{figs/b2.jpg} \
