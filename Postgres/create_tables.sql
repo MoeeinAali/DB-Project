@@ -458,6 +458,19 @@ CREATE TABLE ticket_type_priority
     priority INT
 );
 
+CREATE TABLE search_history
+(
+customer_id int not null,
+trip_id TEXT not null,
+PRIMARY KEY(customer_id, trip_id),
+CONSTRAINT fk_customer
+FOREIGN KEY (customer_id)
+REFERENCES user_account (account_id),
+CONSTRAINT fk_trip
+FOREIGN KEY (trip_id)
+REFERENCES trip (trip_id)
+)
+
 
 
 -- CREATE INDEX hotel_name_index
