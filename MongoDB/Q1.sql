@@ -1,0 +1,1 @@
+db.hotel_ticket.find({ type: "cancel" }).pretty();
