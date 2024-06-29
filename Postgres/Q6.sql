@@ -5,4 +5,4 @@ FROM (SELECT state
       UNION ALL
       SELECT state
       from trip_reservation
-      WHERE state = 'Cancelled not paid')
+      WHERE state = 'Cancelled not paid') AS cancelled_reservations

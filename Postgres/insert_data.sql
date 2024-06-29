@@ -106,7 +106,7 @@ VALUES (1, 'Grand Hotel', '123 Main St, Cityville', 'Cityville', 'Free cancellat
        (3, 'Budget Inn', '303 Economy St, Suburbia', 'Suburbia', 'Free cancellation within 72 hours', 3.5, '555-678-9012'),
        (2, 'Airport Hotel', '404 Flight Rd, Airport City', 'Airport City', 'No cancellation', 3.8, '555-345-6789'),
        (5, 'Countryside B&B', '505 Country Ln, Countryside', 'Countryside', 'Free cancellation within 48 hours', 4.6, '555-765-4321'),
-       (5, 'Historic Hotel', '606 History Rd, Oldtown', 'Oldtown', 'Free cancellation within 24 hours', 4.3, '555-234-5678'),
+       (5, 'ALMAS', '606 History Rd, Oldtown', 'Oldtown', 'Free cancellation within 24 hours', 4.3, '555-234-5678'),
        (1, 'Modern Hotel', '707 Future St, Newtown', 'Newtown', 'No cancellation', 4.1, '555-876-5432');
 
 -- hotel_admin
@@ -302,17 +302,17 @@ INSERT INTO trip (trip_id, origin_terminal_id, destination_terminal_id, vehicle_
                   destination_city, end_date, start_date, cancel_rule, max_weight, seat_type)
 VALUES ('1', 1, 2, 'Bus1', 'City A', 50.00, 40, 'City B', '2024-07-15', '2024-07-10', 'No cancellation fee', NULL,
         'Economy'),
-       ('2', 2, 3, 'Bus2', 'City C', 80.00, 45, 'City D', '2024-07-20', '2024-07-18', 'Cancellation fee applies',
+       ('2', 2, 3, 'Bus2', 'City C', 80.00, 45, 'City D', '2024-07-20', '1403-01-05', 'Cancellation fee applies',
         NULL, 'Luxury'),
-       ('3', 3, 1, 'koopetrain1', 'City E', 120.00, 300, 'City F', '2024-07-25', '2024-07-22',
+       ('3', 3, 1, 'koopetrain1', 'City E', 120.00, 300, 'City F', '2024-07-25', '1403-01-01',
         'Flexible cancellation policy', 500.00, NULL),
        ('4', 1, 3, 'koopetrain2', 'City B', 55.00, 350, 'City A', '2024-07-12', '2024-07-08',
         'No cancellation fee', NULL, 'Economy'),
-       ('5', 2, 1, 'bustrain1', 'City D', 70.00, 400, 'City C', '2024-07-18', '2024-07-16',
+       ('5', 2, 1, 'bustrain1', 'City D', 70.00, 400, 'Ocean City', '2024-07-18', '2024-07-16',
         'Cancellation fee applies', NULL, 'Cargo'),
-       ('6', 3, 2, 'airplane1', 'City G', 150.00, 100, 'City H', '2024-07-30', '2024-07-28', 'Non-refundable',
+       ('6', 3, 2, 'airplane1', 'Tehran', 150.00, 100, 'Mashhad', '2024-12-29', '2024-12-28', 'Non-refundable',
         2000.00, 'Business'),
-       ('7', 1, 2, 'airplane2', 'City I', 180.00, 120, 'City J', '2024-08-05', '2024-08-02', 'Non-refundable',
+       ('7', 1, 2, 'airplane2', 'City I', 180.00, 120, 'Uptown', '2024-08-05', '1403-01-13', 'Non-refundable',
         2500.00, 'First Class');
 
 
@@ -360,19 +360,19 @@ VALUES (1, '2', 1, '2024-07-01', FALSE, 'Confirmed', 10),
        (3, '3', 3, '2024-07-03', FALSE, 'Confirmed', 15),
        (4, '5', 4, '2024-07-04', FALSE, 'Cancelled', NULL),
        (5, '5', 5, '2024-07-05', TRUE, 'Confirmed', 20),
-       (6, '6', 6, '2024-07-06', FALSE, 'Pending', 8),
+       (6, '6', 6, '2024-07-06', FALSE, 'Cancelled not paid', 8),
        (7, '7', 7, '2024-07-07', TRUE, 'Confirmed', 12);
 
 
 -- hotel_reservation
 INSERT INTO hotel_reservation (transaction_id, hotel_id, room_id, user_id, reserve_date, duration, state, start_date)
-VALUES (1, 1, 1, 2, '2024-07-01', '3 days', 'Confirmed', '2024-07-05'),
+VALUES (1, 9, 1, 2, '2024-07-01', '3 days', 'Confirmed', '2024-07-05'),
        (2, 2, 3, 2, '2024-07-02', '2 days', 'Pending', '2024-07-10'),
-       (3, 3, 5, 3, '2024-07-03', '5 days', 'Confirmed', '2024-07-15'),
+       (3, 9, 5, 3, '2024-07-03', '5 days', 'Confirmed', '2024-07-15'),
        (4, 4,7, 5, '2024-07-04', '1 day', 'Cancelled', '2024-07-08'),
-       (5, 5,9, 5, '2024-07-05', '4 days', 'Confirmed', '2024-07-12'),
-       (6, 6,11, 6, '2024-07-06', '2 days', 'Pending', '2024-07-20'),
-       (7, 7,13, 7, '2024-07-07', '3 days', 'Confirmed', '2024-07-18');
+       (5, 5,9, 5, '2024-07-05', '4 days', 'Cancelled admin', '2024-07-12'),
+       (6, 6,11, 6, '2024-07-06', '2 days', 'Pending', '1403-01-06'),
+       (7, 7,13, 7, '2024-07-07', '3 days', 'Cancelled not paid', '2024-07-18');
 
 
 -- discount_usage_trip
